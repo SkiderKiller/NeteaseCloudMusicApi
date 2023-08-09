@@ -12,9 +12,9 @@ module.exports = async (query, request) => {
       crypto.createHash('md5').update(query.password).digest('hex'),
     rememberLogin: 'true',
   }
-  let result = await request('POST', `https://music.163.com/api/login`, data, {
+  let result = await request('POST', `https://music.163.com/weapi/middle/account/sns/weblogin`, data, {
     crypto: 'weapi',
-    ua: 'pc',
+    ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
     cookie: query.cookie,
     proxy: query.proxy,
     realIP: query.realIP,
